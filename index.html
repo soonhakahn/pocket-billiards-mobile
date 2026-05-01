@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#081711">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pocket Billiards">
+  <meta name="description" content="아이폰에서 바로 실행되는 모바일 포켓볼 게임">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="stylesheet" href="./style.css">
+  <title>Pocket Billiards Mobile</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hud top-hud">
+      <div class="brand-block">
+        <p class="eyebrow">MOBILE CANVAS ARCADE</p>
+        <h1>Pocket Billiards</h1>
+      </div>
+      <div class="status-pills">
+        <div class="pill"><span>남은 공</span><strong id="ballsLeft">0</strong></div>
+        <div class="pill"><span>샷 수</span><strong id="shotsTaken">0</strong></div>
+        <div class="pill"><span>상태</span><strong id="gameState">준비</strong></div>
+      </div>
+    </header>
+
+    <main class="table-stage">
+      <div class="visualizer-frame">
+        <canvas id="visualizerCanvas" aria-hidden="true"></canvas>
+      </div>
+      <canvas id="gameCanvas" aria-label="포켓볼 게임 캔버스"></canvas>
+
+      <section class="start-overlay" id="startOverlay">
+        <div class="overlay-card">
+          <p class="eyebrow">TOUCH FIRST EXPERIENCE</p>
+          <h2>당겨서 조준하고 놓으면 샷</h2>
+          <p>
+            아이폰에서 URL을 열면 바로 플레이됩니다. 첫 탭으로 사운드와 배경음악이 시작되고,
+            충돌에 맞춰 시각화가 반응합니다.
+          </p>
+          <ul>
+            <li>흰 공 근처를 드래그해 방향과 세기를 조절</li>
+            <li>모든 컬러볼을 넣으면 승리</li>
+            <li>흰 공이 빠지면 자동 재배치 후 페널티</li>
+          </ul>
+          <button id="startButton" class="primary-button">탭해서 시작</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="hud bottom-hud">
+      <div class="controls-block">
+        <button id="restartButton" class="secondary-button">리셋</button>
+        <button id="musicButton" class="secondary-button">음악 켜짐</button>
+        <button id="fxButton" class="secondary-button">효과음 켜짐</button>
+      </div>
+      <div class="message-block">
+        <p id="messageLine">흰 공을 당겨 첫 샷을 만들어보세요.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./game.js"></script>
+</body>
+</html>
