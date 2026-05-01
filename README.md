@@ -2,6 +2,8 @@
 
 모바일 Safari에서 URL만 열어도 바로 플레이 가능한 정적 포켓볼 게임입니다.
 
+https://soonhakahn.github.io/pocket-billiards-mobile/
+
 ## 특징
 
 - HTML5 Canvas 기반 포켓볼 게임
